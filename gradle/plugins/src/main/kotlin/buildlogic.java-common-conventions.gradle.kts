@@ -14,7 +14,7 @@ dependencies {
 }
 
 val javaVersion: String = System.getProperty("matrix.version") ?: "21"
-val javaVendor: String = System.getProperty("matrix.vendor") ?: "adoptium"
+val javaVendor: String = System.getProperty("matrix.vendor") ?: ""
 
 // println("Using Java version: $javaVersion - $javaVendor")
 

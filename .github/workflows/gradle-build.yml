@@ -10,8 +10,8 @@ jobs:
 
     strategy:
       matrix:
-        version: [ '21', '22']
-        vendor: ['adoptium', 'oracle']
+        version: [ '21', '22', '23' ]
+        vendor: ['temurin', 'oracle']
 
     name: Build with JDK ${{ matrix.version }} - ${{ matrix.vendor }}
 
