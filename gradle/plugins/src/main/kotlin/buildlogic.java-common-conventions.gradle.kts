@@ -23,7 +23,6 @@ java {
         languageVersion = JavaLanguageVersion.of(javaVersion)
         vendor = JvmVendorSpec.matching(javaVendor)
     }
-
 }
 
 tasks.withType<JavaCompile> {
