@@ -12,6 +12,8 @@ java {
 
 tasks.withType<Javadoc> {
     (options as StandardJavadocDocletOptions).addStringOption("Xdoclint:none", "-quiet")
+    isFailOnError = false
+    include("**/api/**")
 }
 
 val jqwik2Version: String = "${rootProject.extra.get("jqwik2Version")}"
