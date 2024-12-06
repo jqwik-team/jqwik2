@@ -1,7 +1,5 @@
 plugins {
     id("buildlogic.java-api-conventions")
-    `maven-publish`
-    signing
 }
 
 description = "Jqwik2 core module"
@@ -31,22 +29,6 @@ tasks.jar {
 }
 
 publishing {
-    repositories {
-        maven {
-            // hint: credentials are in ~/.gradle/gradle.properties
-            val repoUsername: String = project.findProperty("tokenUsername") as? String ?: ""
-            val repoPassword: String = project.findProperty("tokenPassword") as? String ?: ""
-
-            credentials {
-                username = repoUsername
-                password = repoPassword
-            }
-
-            val releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
-            val snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-            url = uri(if (isSnapshotRelease) { snapshotsRepoUrl } else { releasesRepoUrl })
-        }
-    }
     publications {
         create<MavenPublication>("jqwik2Core") {
             groupId = "net.jqwik"
