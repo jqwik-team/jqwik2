@@ -36,24 +36,21 @@ tasks.named<Test>("test") {
     testLogging.showStandardStreams = true
 }
 
-val javaVersion: String = System.getProperty("matrix.version") ?: "21"
 val kotlinCompilerArgs = listOf(
     "-Xnullability-annotations=@org.jspecify.annotations:strict",
     "-Xemit-jvm-type-annotations" // Required for annotations on type variables
 )
 
+// Kotlin toolchain target is always Java 21 regardless of the actual Java version
+
 tasks.withType<KotlinCompile> {
     compilerOptions {
         freeCompilerArgs.set(kotlinCompilerArgs)
         javaParameters = true // Required to get correct parameter names in reporting
-        jvmTarget = JvmTarget.fromTarget(javaVersion)
+        jvmTarget = JvmTarget.JVM_21
     }
 }
 
-// Currently Kotlin only supports up to Java 22.
-// To allow Kotlin being built on newer Java versions, we need to set the target version for the Java libs to max 22
-val jvmToolchainVersion = javaVersion.toInt()
-
 kotlin {
-    jvmToolchain(jvmToolchainVersion)
+    jvmToolchain(21)
 }
