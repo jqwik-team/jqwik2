@@ -2,6 +2,7 @@
 apiguardian = "1.1.2"
 junit-jupiter = "5.11.3"
 assertJ = '3.26.3'
+kotlin = '2.0.21'
 #opentest4j = '1.3.0'
 #archunit = '1.3.0'
 #mockito = '5.14.2'
@@ -10,3 +11,5 @@ assertJ = '3.26.3'
 apiguardian = { module = "org.apiguardian:apiguardian-api", version.ref = "apiguardian" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
 assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertJ" }
+kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }

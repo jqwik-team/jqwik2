@@ -1,7 +1,11 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     java
     `java-library`
     id("buildlogic.publish-library")
+    id("kotlin")
 }
 
 repositories {
@@ -30,4 +34,23 @@ tasks.named<Test>("test") {
     }
 
     testLogging.showStandardStreams = true
+}
+
+val javaVersion: String = System.getProperty("matrix.version") ?: "21"
+
+val kotlinCompilerArgs = listOf(
+    "-Xnullability-annotations=@org.jspecify.annotations:strict",
+    "-Xemit-jvm-type-annotations" // Required for annotations on type variables
+)
+
+tasks.withType<KotlinCompile> {
+    compilerOptions {
+        freeCompilerArgs.set(kotlinCompilerArgs)
+        javaParameters = true // Required to get correct parameter names in reporting
+        jvmTarget = JvmTarget.fromTarget(javaVersion)
+    }
+}
+
+kotlin {
+    jvmToolchain(21)
 }
