@@ -37,7 +37,6 @@ tasks.named<Test>("test") {
 }
 
 val javaVersion: String = System.getProperty("matrix.version") ?: "21"
-
 val kotlinCompilerArgs = listOf(
     "-Xnullability-annotations=@org.jspecify.annotations:strict",
     "-Xemit-jvm-type-annotations" // Required for annotations on type variables
@@ -51,6 +50,10 @@ tasks.withType<KotlinCompile> {
     }
 }
 
+// Currently Kotlin only supports up to Java 22.
+// To allow Kotlin being built on newer Java versions, we need to set the target version for the Java libs to max 22
+val jvmToolchainVersion = javaVersion.toInt()
+
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(jvmToolchainVersion)
 }

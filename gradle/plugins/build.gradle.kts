@@ -3,9 +3,11 @@ plugins {
 }
 
 repositories {
+    mavenCentral()
     gradlePluginPortal()
 }
 
 dependencies {
     implementation(libs.kotlin.gradlePlugin)
+    implementation(libs.kotlin.stdlib)
 }
