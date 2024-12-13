@@ -10,3 +10,4 @@ plugins {
 rootProject.name = "jqwik2"
 
 include("core")
+include("kotlin-core")
