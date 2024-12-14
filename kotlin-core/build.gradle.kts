@@ -1,6 +1,5 @@
 plugins {
     id("buildlogic.kotlin-library-conventions")
-    kotlin("plugin.power-assert") version libs.versions.kotlin
 }
 
 description = "Jqwik2 Kotlin core support"

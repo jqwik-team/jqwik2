@@ -11,6 +11,8 @@ kotlin = '2.0.21'
 apiguardian = { module = "org.apiguardian:apiguardian-api", version.ref = "apiguardian" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
 assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertJ" }
-kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlin-test-junit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "kotlin" }
+# Used in gradle plugins build.gradle.kts:
+kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-powerAssertPlugin = { module = "org.jetbrains.kotlin:kotlin-power-assert", version.ref = "kotlin" }

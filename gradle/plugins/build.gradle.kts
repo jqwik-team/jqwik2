@@ -9,5 +9,5 @@ repositories {
 
 dependencies {
     implementation(libs.kotlin.gradlePlugin)
-    implementation(libs.kotlin.stdlib)
+    implementation(libs.kotlin.powerAssertPlugin)
 }
