@@ -5,7 +5,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     `java-library`
     id("buildlogic.publish-library")
-    id("kotlin")
+    kotlin("jvm")
     kotlin("plugin.power-assert")
 }
 
