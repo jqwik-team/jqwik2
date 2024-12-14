@@ -1,11 +1,11 @@
 package net.jqwik2.kotlin.core.api
 
-import org.junit.jupiter.api.Test
+import kotlin.test.Test
 
 class GlobalsTests {
 
     @Test
-    fun testJqwikVersion() {
+    fun `jqwikVersion() is 2`() {
         assert(jqwikVersion() == "2")
     }
 }

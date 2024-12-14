@@ -11,6 +11,7 @@ dependencies {
     implementation(libs.kotlin.stdlib)
     implementation(project(":core"))
 
+    testImplementation(libs.kotlin.test.junit5)
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.assertj.core)
 }
