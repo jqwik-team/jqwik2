@@ -2,6 +2,10 @@ import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+fun alias(alias: String): Provider<MinimalExternalModuleDependency> {
+    return versionCatalogs.named("libs").findLibrary(alias).orElseThrow()
+}
+
 plugins {
     `java-library`
     id("buildlogic.publish-library")
@@ -22,7 +26,7 @@ powerAssert {
 }
 
 dependencies {
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testRuntimeOnly(alias("junit.platform.launcher"))
 }
 
 tasks.named<Test>("test") {
@@ -60,3 +64,4 @@ tasks.withType<KotlinCompile> {
 kotlin {
     jvmToolchain(21)
 }
+
