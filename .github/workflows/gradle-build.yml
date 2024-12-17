@@ -10,8 +10,8 @@ jobs:
 
     strategy:
       matrix:
-        version: [ '21', '22' ] ## TODO: Figure out why matrix with additional version '23'
-        vendor: ['oracle']      ##       and additional vendor 'temurin' is not working
+        version: [ '21', '23' ] # Make matrix cover more vendors, languages and timezones
+        vendor: ['oracle']
 
     name: Build with JDK ${{ matrix.version }} - ${{ matrix.vendor }}
 
