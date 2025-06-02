@@ -1,6 +1,6 @@
 [versions]
 apiguardian = "1.1.2"
-junit-jupiter = "5.12.2"
+junit-jupiter = "5.13.0"
 junit-platform = "1.12.2"
 assertJ = '3.27.3'
 kotlin = '2.1.21'
