@@ -1,9 +1,9 @@
 [versions]
 apiguardian = "1.1.2"
-junit-jupiter = "5.13.0"
-junit-platform = "1.13.1"
+junit-jupiter = "5.13.2"
+junit-platform = "1.13.2"
 assertJ = '3.27.3'
-kotlin = '2.1.21'
+kotlin = '2.2.0'
 #opentest4j = '1.3.0'
 #archunit = '1.3.0'
 #mockito = '5.14.2'
