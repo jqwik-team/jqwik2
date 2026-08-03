@@ -26,7 +26,7 @@ jobs:
           java-version: 21
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v6
+        uses: gradle/actions/setup-gradle@v6.2.0
 
       - name: Gradle Build
         run: ./gradlew build -Dmatrix.version=${{ matrix.version }} -Dmatrix.vendor=${{ matrix.vendor }}
